@@ -34,7 +34,7 @@
           "imageWidth": 200,
           "imageHeight": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#000000"
         }
       ]
     ],
