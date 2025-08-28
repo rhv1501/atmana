@@ -1,8 +1,11 @@
 import AppGradient from "@/components/AppGradient";
 import { MEDITATION_DATA } from "@/constants/MeditationData";
+import MEDITATION_IMAGES from "@/constants/meditation-images";
+import { LinearGradient } from "expo-linear-gradient";
+
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { FlatList, ImageBackground, Pressable, Text, View } from "react-native";
 const Nature = () => {
   return (
     <View className="flex-1">
@@ -24,17 +27,22 @@ const Nature = () => {
             renderItem={({ item }) => (
               <Pressable
                 onPress={() => {}}
-                className="mb-4 bg-white/10 rounded-xl p-4 flex-row items-center"
+                className="h-48 my-3 rounded-md overflow-hidden"
               >
-                <View className="flex-1">
-                  <Text className="text-lg font-semibold text-white mb-1">
-                    {item.title}
-                  </Text>
-                  <Text className="text-gray-300">{item.image} minutes</Text>
-                </View>
-                <View className="bg-white/20 p-3 rounded-full">
-                  <Text className="text-white text-lg">▶️</Text>
-                </View>
+                <ImageBackground
+                  source={MEDITATION_IMAGES[item.id - 1]}
+                  resizeMode="cover"
+                  className="flex-1 rounded-lg justify-center"
+                >
+                  <LinearGradient
+                    colors={["transparent", "rgba(0,0,0,0.8)"]}
+                    className="flex-1 justify-center items-center"
+                  >
+                    <Text className="text-gray-100 font-bold text-3xl text-center ">
+                      {item.title}
+                    </Text>
+                  </LinearGradient>
+                </ImageBackground>
               </Pressable>
             )}
           />
