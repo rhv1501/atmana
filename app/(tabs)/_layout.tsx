@@ -35,12 +35,6 @@ const TabsLayout = () => {
           ),
         }}
       />
-      <Tabs.Screen
-        name="affirmations/[id]"
-        options={{
-          href: null, // This hides it from the tab bar
-        }}
-      />
     </Tabs>
   );
 };
